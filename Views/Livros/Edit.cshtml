@@ -1,0 +1,40 @@
+@model BibliotecaWeb.Models.Livro
+@{
+    ViewData["Title"] = "Edit";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+   <h2>Livro</h2>
+        <hr>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Autor" class="control-label"></label>
+                <input asp-for="Autor" class="form-control" />
+                <span asp-validation-for="Autor" class="text-danger"></span>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-info">Detalhes do Livro</a>
+        </form>
+
+        <br><br>
+
+</body>
+</html>

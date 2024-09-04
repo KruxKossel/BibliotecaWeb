@@ -1,0 +1,34 @@
+@model BibliotecaWeb.Models.Livro
+@{
+    ViewData["Title"] = "Delete";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar</title>
+</head>
+<body>
+    <h2>Livro</h2>
+        <hr>
+        
+        <table class="table">
+            <tr>
+                <th>Título</th>
+                <td>@Model.Titulo</td>
+            </tr>
+            <tr>
+                <th>Autor</th>
+                <td>@Model.Autor</td>
+            </tr>
+        </table>
+        <form asp-action="DeleteConfirmed" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+
+
+</body>
+</html>

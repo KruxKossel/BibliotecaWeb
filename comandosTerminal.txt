@@ -1,0 +1,13 @@
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+(Permite a recompilação de views Razor em tempo de execução, útil durante o desenvolvimento.)
+
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+(Facilita o mapeamento de objetos, útil para converter entre modelos de domínio e view models.)

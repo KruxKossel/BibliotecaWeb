@@ -1,0 +1,48 @@
+@model IEnumerable<BibliotecaWeb.Models.Livro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+<body>
+    <div class="">
+        <h1 class="display-4">Consulta de Livros</h1>
+        <a asp-area="" asp-controller="Livros" asp-action="Create" class="btn btn-outline-primary">Adicionar um Novo Livro</a>
+        <br><br>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor(es)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var livro in Model)
+                {
+                    <tr>
+                        <td>@livro.Titulo</td>
+                        <td>@livro.Autor</td>
+                        <td>
+                            <a class="nav-link d-inline" asp-area="" asp-controller="Livros" asp-action="Edit" asp-route-id="@livro.Id">Editar</a> | 
+                            <a class="nav-link d-inline" asp-area="" asp-controller="Livros" asp-action="Details" asp-route-id="@livro.Id">Detalhes</a> | 
+                            <a class="nav-link d-inline" asp-area="" asp-controller="Livros" asp-action="Delete" asp-route-id="@livro.Id">Deletar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+</html>

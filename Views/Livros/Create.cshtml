@@ -1,0 +1,33 @@
+@model BibliotecaWeb.Models.Livro
+@{
+    ViewData["Title"] = "Create";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+</head>
+<body>
+    <h2>Novo Livro</h2>
+        <hr>
+        <form asp-action="Create">
+        <div>
+            <label for="Nome">Título:</label>
+            <br>
+            <input type="text" asp-for="Titulo" placeholder="Digite o título" class="form-control" />
+            <span asp-validation-for="Titulo" class="text-danger"></span>
+        </div>
+        <br>
+        <div>
+            <label for="Autor">Autor:</label>
+            <br>
+            <input type="text" asp-for="Autor" placeholder="Digite o nome do Autor" class="form-control" />
+            <span asp-validation-for="Autor" class="text-danger"></span>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Adicionar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@model BibliotecaWeb.Models.Livro
+@{
+    ViewData["Title"] = "Details";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+</head>
+<body>
+    <h2>Livro</h2>
+        <hr>
+        
+        <table class="table">
+        <tr>
+            <th>Título</th>
+            <td>@Model.Titulo</td>
+        </tr>
+        <tr>
+            <th>Autor</th>
+            <td>@Model.Autor</td>
+        </tr>
+    </table>
+
+        <br><br>
+
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">Editar</a>
+        @* <a asp-action="Index" class="btn btn-secondary">Voltar</a>   *@
+
+</body>
+</html>
